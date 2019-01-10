@@ -4,27 +4,19 @@
 
 1. On the UCI cluster, the resource request "-pe openmp 64" refers to the number of processors requested.  Does that
    request mean that your commands will use multiple processors?
-	```
- 	Yes, if they can be parallelized.
-	```
+ 	**Yes, if they can be parallelized.**
 
-2. In general, how do you know how many processors, how much RAM, how many files would be required/needed/written by the
-   jobs you are running on the cluster?
-	``` 
-	I will google it for jobs I will be running or just use the command /usr/bin/time-v ls / to find out.
-	```
+2. In general, how do you know how many processors, how much RAM, how many files would be required/needed/written by the jobs you are running on the cluster? 
+	**I will google it for jobs I will be running or just use the command /usr/bin/time-v ls / to find out.**
 
 3. In order to be a "good citizen", you need to have some idea of much RAM your job requires.  In particular, you need
-   to know the "peak" (i.e., maximum) RAM required at any point during execution.  Show an example of the shell command
-   that you would use on a Linux machine to measure run time and peak ram usage of an arbitrary command, where the time/peak RAM values are written to a file.
+   to know the "peak" (i.e., maximum) RAM required at any point during execution.  Show an example of the shell command that you would use on a Linux machine to measure run time and peak ram usage of an arbitrary command, where the time/peak RAM values are written to a file.
 	```
-	/usr/bin/time -v ls / >> Summary.txt
+	/usr/bin/time -v ls / &>> Summary.txt
 	```
 
 4. What are the units of your answer for number 3?
-	```
-	 The units for time is seconds. The units for RAM is kbytes.
-	```
+	** The units for time is seconds. The units for RAM is kbytes.**
 
 5. What are the bash commands for the following operations:
 
@@ -62,9 +54,9 @@
 ## Trickier questions
 
 7. Would your answer to number 3 work on Apple's OS X operating system?  If no, do you have any idea why not? 
-	```
- 	No. The command only exits on linux system.
-	```
+
+ 	**No. The command only exits on linux system.**
+	
 
 8. Most of the HPC nodes have 512Gb (gigabytes) of RAM. Let's say you have a job that will require **no more** than 24Gb
    of RAM.  How would you request resources so that you can run more than one job on a node **and** not cause nodes to
@@ -76,5 +68,5 @@
 	#$ -N run.log
 	#$ -q free128
 	#$ -l node=nodename
-	#$ -l h_vmem=24Gb
+	#$ -l h_rss=24G
 	```
