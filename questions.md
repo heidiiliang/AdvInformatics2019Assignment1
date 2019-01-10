@@ -14,23 +14,23 @@
 3. In order to be a "good citizen", you need to have some idea of much RAM your job requires.  In particular, you need
    to know the "peak" (i.e., maximum) RAM required at any point during execution.  Show an example of the shell command
    that you would use on a Linux machine to measure run time and peak ram usage of an arbitrary command, where the time/peak RAM values are written to a file.
-	```
-	/usr/bin/time -v ls / >> Summary.txt
-        ```
+```
+/usr/bin/time -v ls / >> Summary.txt
+```
 
 4. What are the units of your answer for number 3?
- The units for time is seconds. The units for RAM is kbytes.
+<br /> The units for time is seconds. The units for RAM is kbytes.
 
 5. What are the bash commands for the following operations:
 
     * Checking that a file exists
-	 ```
+	```
 	if [ -f questions.md ]
-        then
-         echo "the file exists"
-        else
-         echo "the file does not exists"
-        fi
+	then
+	 echo "the file exists"
+	else
+	 echo "the file does not exists"
+	fi
 	```
 
 
@@ -46,13 +46,13 @@
 
 6. How would you use the commands from your answer to 5 to write a work flow for HPC that only runs a job if the
    expected output file is **not** present.
-	 ```
+	```
 	if [ -f question.md ]
-        then
-         echo "exists"
-        else
-         echo "notpresnt" >> notpresnt.txt
-        fi
+	then
+	 echo "exists"
+	else
+	 echo "notpresnt" >> notpresnt.txt
+	fi
 	```
 
 ## Trickier questions
@@ -66,11 +66,10 @@
    crash?  Show an example of a skeleton HPC script as part of your answer.  **Knowing how to do this is super important
    and will save you loads of frustration and prevent you from taking out your colleagues' jobs on the cluster,
    preventing you from getting nasty emails from Harry!!!!!!!!!!!**
-<br />
 	```
-	#! /bin/bash
-        #$ -N run.log
-        #$ -q free128
-        #$ -l node=nodename
-        #$ -l h_vmem=24Gb
+<br />#! /bin/bash
+<br />#$ -N run.log
+<br />#$ -q free128
+<br />#$ -l node=nodename
+<br />#$ -l h_vmem=24Gb
 	```
